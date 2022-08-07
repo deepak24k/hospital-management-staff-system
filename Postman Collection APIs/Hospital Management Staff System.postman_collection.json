@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "c725d9a4-6939-43d1-a5d5-b5dfa967d350",
+		"name": "Hospital Management Staff System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"dummy\",\r\n    \"lastName\": \"data\",\r\n    \"email\": \"dummy@gmail.com\",\r\n    \"password\": \"Password\",\r\n    \"role\": \"admin\",\r\n    \"phoneNumber\": \"9876786545\",\r\n    \"dob\": \"1990-09-06\",\r\n    \"joiningDate\": \"2022-08-07\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8095/api/authenticate/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"api",
+						"authenticate",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"dummy@gmail.com\",\r\n    \"password\": \"Password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8095/api/authenticate/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"api",
+						"authenticate",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddMockDoctor in Doctor Table",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"doctorNameList\": [\r\n        \"Suresh\",\r\n        \"Ramesh\",\r\n        \"Suraj\",\r\n        \"Anand\",\r\n        \"Akhil\",\r\n        \"Tarun\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8095/api/patient/addMockDoctor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"api",
+						"patient",
+						"addMockDoctor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get All Patient",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkdW1teUBnbWFpbC5jb20iLCJleHAiOjE2NTk4ODg0MTYsImlhdCI6MTY1OTg1OTYxNn0.NSKQ5bdyCQKFq19mFoQHxQxMwWplz83BwDoSxfbRElMru2CgKScSzOVphjNdWqAXjJzYPqYBlT7OXhVGC0DPCQ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8095/api/patient/getAllPatients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"api",
+						"patient",
+						"getAllPatients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Patient",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkdW1teUBnbWFpbC5jb20iLCJleHAiOjE2NTk4ODg0MTYsImlhdCI6MTY1OTg1OTYxNn0.NSKQ5bdyCQKFq19mFoQHxQxMwWplz83BwDoSxfbRElMru2CgKScSzOVphjNdWqAXjJzYPqYBlT7OXhVGC0DPCQ",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Arun\",\r\n    \"lastName\": \"Kumar\",\r\n    \"email\": \"arun@gmail.com\",\r\n    \"age\": 32,\r\n    \"bloodGroup\": \"O +\",\r\n\t\"doctorName\": \"ABC\",\r\n    \"doctorId\": 2,\r\n    \"dateOfAdmit\": \"2022-08-07\",\r\n    \"roomNo\": 301,\r\n\t\"expenses\": 8136\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8095/api/patient/addPatient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"api",
+						"patient",
+						"addPatient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Patient By patientId",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkdW1teUBnbWFpbC5jb20iLCJleHAiOjE2NTk4ODg0MTYsImlhdCI6MTY1OTg1OTYxNn0.NSKQ5bdyCQKFq19mFoQHxQxMwWplz83BwDoSxfbRElMru2CgKScSzOVphjNdWqAXjJzYPqYBlT7OXhVGC0DPCQ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8095/api/patient/getPatient/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"api",
+						"patient",
+						"getPatient",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Patient By patientId",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkdW1teUBnbWFpbC5jb20iLCJleHAiOjE2NTk4ODg0MTYsImlhdCI6MTY1OTg1OTYxNn0.NSKQ5bdyCQKFq19mFoQHxQxMwWplz83BwDoSxfbRElMru2CgKScSzOVphjNdWqAXjJzYPqYBlT7OXhVGC0DPCQ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8095/api/patient/removePatient/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"api",
+						"patient",
+						"removePatient",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Discharge Patient By patientId",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkdW1teUBnbWFpbC5jb20iLCJleHAiOjE2NTk4ODg0MTYsImlhdCI6MTY1OTg1OTYxNn0.NSKQ5bdyCQKFq19mFoQHxQxMwWplz83BwDoSxfbRElMru2CgKScSzOVphjNdWqAXjJzYPqYBlT7OXhVGC0DPCQ",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8095/api/patient/dischargePatient/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"api",
+						"patient",
+						"dischargePatient",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
